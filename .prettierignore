@@ -1,0 +1,9 @@
+**/.next
+**/.git
+**/.svn
+**/.hg
+**/.yarn
+**/node_modules
+LICENSE
+*.lock
+*-lock.json
