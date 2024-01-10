@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  node-20:
+    image: node:20
+
+  nextapp:
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    # network_mode: "host"
+    container_name: nextapp
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 90:5055
+    volumes:
+      - ./:/nextapp
+    tty: true
+    stdin_open: true
+    restart: on-failure
